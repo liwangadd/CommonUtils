@@ -9,7 +9,11 @@ import java.util.*;
 /**
  * 反射工具类
  */
-public class ReflectUtils {
+public final class ReflectUtils {
+
+    private ReflectUtils() {
+        throw new UnsupportedOperationException("the ReflectUtils cannot be initialed");
+    }
 
     public static final Class<?>[] EMPTY_PARAM_TYPES = new Class<?>[0];
     public static final Object[] EMPTY_PARAMS = new Object[0];

@@ -10,6 +10,14 @@ public final class EmptyUtils {
         throw new UnsupportedOperationException("the emptyUtils cannot be initialed");
     }
 
+    /**
+     * 检查给定对象是否为空
+     * 传入对象不能为null
+     * 字符串，数组，集合类，Map长度不能为0
+     *
+     * @param obj 要判空的对象
+     * @return
+     */
     public static boolean isEmpty(final Object obj) {
         if (obj == null) {
             return true;
@@ -29,6 +37,12 @@ public final class EmptyUtils {
         return false;
     }
 
+    /**
+     * 判断给定对象是否不为空
+     *
+     * @param obj 判空对象
+     * @return
+     */
     public static boolean isNotEmpty(final Object obj) {
         return !isEmpty(obj);
     }
