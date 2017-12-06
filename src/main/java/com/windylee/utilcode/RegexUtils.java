@@ -34,7 +34,7 @@ public class RegexUtils {
 
     private static final String INTEGER_REGEX = "^-?[1-9]\\d*$";
 
-    private static final String POSIITVE_FLOAT_REGEX = "^[1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*$";
+    private static final String POSITIVE_FLOAT_REGEX = "^[1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*$";
 
     private static final String NEGATIVE_FLOAT_REGEX = "^-[1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*$";
 
@@ -191,7 +191,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isPositiveFloat(final String input) {
-        return isMatch(POSIITVE_FLOAT_REGEX, input);
+        return isMatch(POSITIVE_FLOAT_REGEX, input);
     }
 
     /**
