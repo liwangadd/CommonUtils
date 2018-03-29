@@ -10,10 +10,20 @@ public class StringUtils {
         throw new UnsupportedOperationException("the StringUtils cannot be initialed");
     }
 
+    /**
+     * 判断字符串是否为空
+     * @param cs 字符串
+     * @return 空：true；else false
+     */
     public static boolean isEmpty(final CharSequence cs) {
         return cs == null || cs.length() == 0;
     }
 
+    /**
+     * 判断字符串是否为空，或有空字符组成
+     * @param cs 字符串
+     * @return 空或空字符：true；else false
+     */
     public static boolean isBlank(final CharSequence cs) {
         if (cs == null || cs.length() == 0) return true;
         for (int i = 0, len = cs.length(); i < len; ++i) {
@@ -24,6 +34,11 @@ public class StringUtils {
         return true;
     }
 
+    /**
+     * 去掉字符串两端空字符
+     * @param str 字符串
+     * @return 去掉两端空字符的字符串
+     */
     public static String trim(final String str) {
         return str == null ? null : str.trim();
     }
@@ -37,6 +52,12 @@ public class StringUtils {
         return str == null ? EMPTY : str.trim();
     }
 
+    /**
+     * 判断两个字符串是否相等
+     * @param cs1 字符串1
+     * @param cs2 字符串2
+     * @return 相等：true；else： false
+     */
     public static boolean equals(final CharSequence cs1, final CharSequence cs2) {
         if (cs1 == cs2) return true;
         if (cs1 == null || cs2 == null) return false;
@@ -51,6 +72,12 @@ public class StringUtils {
         }
     }
 
+    /**
+     * 判断两个字符串是否相等（忽略大小写）
+     * @param cs1 字符串1
+     * @param cs2 字符串2
+     * @return 相等：true；else： false
+     */
     public static boolean equalsIgnoreCase(final CharSequence cs1, final CharSequence cs2) {
         if (cs1 == cs2) return true;
         if (cs1 == null || cs2 == null || cs1.length() != cs2.length()) return false;
@@ -66,6 +93,12 @@ public class StringUtils {
 
     }
 
+    /**
+     * 截取字符串
+     * @param str 字符串
+     * @param start 截取的起始位置
+     * @return 截取的字符串
+     */
     public static String substring(final String str, int start) {
         if (str == null) return null;
         if (start < 0) {
@@ -79,6 +112,13 @@ public class StringUtils {
         return str.substring(start);
     }
 
+    /**
+     * 截取字符串
+     * @param str 字符串
+     * @param start 截取的起始位置
+     * @param end 截取的结束位置
+     * @return 截取的字符串
+     */
     public static String substring(final String str, int start, int end) {
         if (str == null) return null;
         if (end < 0) end = str.length() + end;
@@ -90,6 +130,12 @@ public class StringUtils {
         return str.substring(start, end);
     }
 
+    /**
+     * 截取从0下标开始，指定长度的字符串
+     * @param str 字符串
+     * @param len 截取的长度
+     * @return 截取的字符串
+     */
     public static String left(final String str, int len) {
         if (str == null) return null;
         if (len < 0) return EMPTY;
@@ -97,6 +143,12 @@ public class StringUtils {
         return str.substring(0, len);
     }
 
+    /**
+     * 截取从最后一个字符开始向前追溯，指定长度的字符串
+     * @param str 字符串
+     * @param len 截取的长度
+     * @return 截取的字符串
+     */
     public static String right(final String str, int len) {
         if (str == null) return null;
         if (len < 0) return EMPTY;
@@ -104,6 +156,13 @@ public class StringUtils {
         return str.substring(str.length() - len);
     }
 
+    /**
+     * 截取从指定位置开始，指定长度的字符串
+     * @param str 字符串
+     * @param pos 起始位置
+     * @param len 截取的长度
+     * @return 截取的字符串
+     */
     public static String mid(final String str, int pos, int len) {
         if (str == null) return null;
         if (len < 0 || pos > str.length()) return EMPTY;
@@ -112,6 +171,12 @@ public class StringUtils {
         return str.substring(pos, pos + len);
     }
 
+    /**
+     * 使用连接符将迭代器中的元素链接起来
+     * @param iterable 迭代器
+     * @param separator 连接符
+     * @return 连接后的字符串
+     */
     public static String join(final Iterator<?> iterable, final String separator) {
         if (iterable == null) return null;
         StringBuilder sb = new StringBuilder();
@@ -126,11 +191,23 @@ public class StringUtils {
         return sb.toString();
     }
 
-
+    /**
+     * 比较两个字符串大小
+     * @param str1 字符串1
+     * @param str2 字符串2
+     * @return 大于：1，等于：0，小于：-1
+     */
     public static int compare(final String str1, final String str2) {
         return compare(str1, str2, true);
     }
 
+    /**
+     * 比较两个字符串大小
+     * @param str1 字符串1
+     * @param str2 字符串2
+     * @param nullIsLess null是否最小
+     * @return 大于：1，等于：0，小于：-1
+     */
     public static int compare(final String str1, final String str2, final boolean nullIsLess) {
         if (str1 == str2) return 0;
         if (str1 == null) return nullIsLess ? -1 : 1;
@@ -138,10 +215,23 @@ public class StringUtils {
         return str1.compareTo(str2);
     }
 
+    /**
+     * 比较两个字符串大小（忽略大小写）
+     * @param str1 字符串1
+     * @param str2 字符串2
+     * @return 大于：1，等于：0，小于：-1
+     */
     public static int compareIgnoreCase(final String str1, final String str2) {
         return compareIgnoreCase(str1, str2, true);
     }
 
+    /**
+     * 比较两个字符串大小（忽略大小写）
+     * @param str1 字符串1
+     * @param str2 字符串2
+     * @param nullIsLess null是否最小
+     * @return 大于：1，等于：0，小于：-1
+     */
     public static int compareIgnoreCase(final String str1, final String str2, final boolean nullIsLess) {
         if (str1 == null && str2 == null) return 0;
         if (str1 == null) return nullIsLess ? -1 : 1;
@@ -149,6 +239,12 @@ public class StringUtils {
         return str1.compareToIgnoreCase(str2);
     }
 
+    /**
+     * 将字符串重复repeat次
+     * @param str 字符串
+     * @param repeat 重复次数
+     * @return null：null，repeat<0: "", else: 重复指定次数的字符串
+     */
     public static String repeat(final String str, final int repeat) {
         if (str == null) return null;
         if (repeat <= 0) return EMPTY;
@@ -178,6 +274,12 @@ public class StringUtils {
         }
     }
 
+    /**
+     * 将字符重复repeat次
+     * @param ch 字符
+     * @param repeat 重复次数
+     * @return repeat<0: "", else重复指定次数的字符串
+     */
     public static String repeat(final char ch, final int repeat) {
         if (repeat < 0) return EMPTY;
         char[] buf = new char[repeat];
@@ -187,6 +289,11 @@ public class StringUtils {
         return new String(buf);
     }
 
+    /**
+     * 获取字符串长度
+     * @param cs 字符串
+     * @return 字符串长度
+     */
     public static int length(final CharSequence cs) {
         return cs == null ? 0 : cs.length();
     }

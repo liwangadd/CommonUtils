@@ -23,14 +23,31 @@ public final class EncryptUtils {
         return encryptMD5toString(data.getBytes());
     }
 
+    /**
+     * MD5加盐加密
+     * @param data 明文字符串
+     * @param salt 盐字符串
+     * @return 16进制密文
+     */
     public static String encryptMD5toString(final String data, final String salt) {
         return bytes2HexString(encryptMD5((data + salt).getBytes()));
     }
 
+    /**
+     * MD5加密
+     * @param data 字节数组
+     * @return 16进制密文
+     */
     public static String encryptMD5toString(byte[] data) {
         return bytes2HexString(encryptMD5(data));
     }
 
+    /**
+     * MD5加密
+     * @param data 明文字节数组
+     * @param salt 盐字节数组
+     * @return 16进制密文
+     */
     public static String encryptMD5toString(final byte[] data, final byte[] salt) {
         if (data == null || salt == null) return null;
         byte[] dataSalt = new byte[data.length + salt.length];
@@ -39,34 +56,75 @@ public final class EncryptUtils {
         return bytes2HexString(encryptMD5(dataSalt));
     }
 
+    /**
+     * MD5加密
+     * @param data 加盐后的字节数组
+     * @return 密文字节数组
+     */
     public static byte[] encryptMD5(final byte[] data) {
         return hashTemplate(data, "MD5");
     }
 
+    /**
+     * SHA1加密
+     * @param data 明文字符串
+     * @return 16进制密文
+     */
     public static String encryptSHA1toString(final String data) {
         return encryptSHA1toString(data.getBytes());
     }
 
+    /**
+     * SHA1加密
+     * @param data 明文字节数组
+     * @return 15进制密文
+     */
     public static String encryptSHA1toString(final byte[] data) {
         return bytes2HexString(encryptSHA1(data));
     }
 
+    /**
+     * SHA1加密
+     * @param data 明文字节数组
+     * @return 密文字节数组
+     */
     public static byte[] encryptSHA1(final byte[] data) {
         return hashTemplate(data, "SHA1");
     }
 
+    /**
+     * SHA256加密
+     * @param data 明文字符串
+     * @return 16进制密文
+     */
     public static String encryptSHA256toString(final String data) {
         return encryptSHA256toString(data.getBytes());
     }
 
+    /**
+     * SHA256加密
+     * @param data 明文字节数组
+     * @return 16进制密文
+     */
     public static String encryptSHA256toString(final byte[] data) {
         return bytes2HexString(encryptSHA256(data));
     }
 
+    /**
+     * SHA256加密
+     * @param data 明文字节数组
+     * @return 密文字节数组
+     */
     public static byte[] encryptSHA256(final byte[] data) {
         return hashTemplate(data, "SHA256");
     }
 
+    /**
+     * 加密
+     * @param data 明文字节数组
+     * @param algorithm 加密算法
+     * @return 密文字节数组
+     */
     private static byte[] hashTemplate(final byte[] data, final String algorithm) {
         if (null == data || data.length <= 0) return null;
         try {
