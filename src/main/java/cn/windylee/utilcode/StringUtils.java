@@ -1,4 +1,4 @@
-package com.windylee.utilcode;
+package cn.windylee.utilcode;
 
 import java.util.Iterator;
 
@@ -11,9 +11,9 @@ public class StringUtils {
     }
 
     /**
-     * 判断字符串是否为空
-     * @param cs 字符串
-     * @return 空：true；else false
+     * Return if is is empty
+     * @param cs The CharSequence
+     * @return {@code true} yes<br/>{@code false} no
      */
     public static boolean isEmpty(final CharSequence cs) {
         return cs == null || cs.length() == 0;
@@ -22,7 +22,7 @@ public class StringUtils {
     /**
      * 判断字符串是否为空，或有空字符组成
      * @param cs 字符串
-     * @return 空或空字符：true；else false
+     * @return @return {@code true} yes<br/>{@code false} no
      */
     public static boolean isBlank(final CharSequence cs) {
         if (cs == null || cs.length() == 0) return true;

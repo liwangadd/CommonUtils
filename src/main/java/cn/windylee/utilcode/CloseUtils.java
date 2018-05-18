@@ -1,4 +1,4 @@
-package com.windylee.utilcode;
+package cn.windylee.utilcode;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -10,9 +10,9 @@ public final class CloseUtils {
     }
 
     /**
-     * 关闭输入输出流
+     * Close the io stream.
      *
-     * @param closeables 输入输出流数组
+     * @param closeables closeables
      */
     public static void closeIO(final Closeable... closeables) {
         if (closeables == null) return;
@@ -28,9 +28,9 @@ public final class CloseUtils {
     }
 
     /**
-     * 静默关闭输入输出流，即不打印错误信息
+     * Close the io stream quietly.
      *
-     * @param closeables 输入输出流数组
+     * @param closeables closeables
      */
     public static void closeIOQuietly(final Closeable... closeables) {
         if (closeables == null) return;
@@ -38,7 +38,7 @@ public final class CloseUtils {
             if (closeable != null) {
                 try {
                     closeable.close();
-                } catch (IOException e) {
+                } catch (IOException ignored) {
                 }
             }
         }

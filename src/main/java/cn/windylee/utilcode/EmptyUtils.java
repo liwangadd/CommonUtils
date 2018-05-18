@@ -1,4 +1,4 @@
-package com.windylee.utilcode;
+package cn.windylee.utilcode;
 
 import java.lang.reflect.Array;
 import java.util.Collection;
@@ -11,21 +11,19 @@ public final class EmptyUtils {
     }
 
     /**
-     * 检查给定对象是否为空
-     * 传入对象不能为null
-     * 字符串，数组，集合类，Map长度不能为0
+     * Return whether object is empty.
      *
-     * @param obj 要判空的对象
-     * @return
+     * @param obj The object.
+     * @return {@code true}: yes<br>{@code false}: no
      */
     public static boolean isEmpty(final Object obj) {
         if (obj == null) {
             return true;
         }
-        if (obj instanceof String && ((String) obj).length() == 0) {
+        if (obj.getClass().isArray() && Array.getLength(obj) == 0) {
             return true;
         }
-        if (obj.getClass().isArray() && Array.getLength(obj) == 0) {
+        if (obj instanceof CharSequence && obj.toString().length() == 0) {
             return true;
         }
         if (obj instanceof Collection && ((Collection) obj).isEmpty()) {
@@ -35,6 +33,18 @@ public final class EmptyUtils {
             return true;
         }
         return false;
+    }
+
+    public static boolean isEmpty(final CharSequence obj) {
+        return obj == null || obj.toString().length() == 0;
+    }
+
+    public static boolean isEmpty(final Collection obj) {
+        return obj == null || obj.isEmpty();
+    }
+
+    public static boolean isEmpty(final Map obj) {
+        return obj == null || obj.isEmpty();
     }
 
     /**
