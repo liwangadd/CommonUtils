@@ -591,22 +591,22 @@ public final class EncryptUtils {
     // DES encryption
     ///////////////////////////////////////////////////////////////////////////
 
-//    /**
-//     * Return the Base64-encode bytes of DES encryption.
-//     *
-//     * @param data           The data.
-//     * @param key            The key.
-//     * @param transformation The name of the transformation, e.g., <i>DES/CBC/PKCS5Padding</i>.
-//     * @param iv             The buffer with the IV. The contents of the
-//     *                       buffer are copied to protect against subsequent modification.
-//     * @return the Base64-encode bytes of DES encryption
-//     */
-//    public static byte[] encryptDES2Base64(final byte[] data,
-//                                           final byte[] key,
-//                                           final String transformation,
-//                                           final byte[] iv) {
-//        return base64Encode(encryptDES(data, key, transformation, iv));
-//    }
+    /**
+     * Return the Base64-encode bytes of DES encryption.
+     *
+     * @param data           The data.
+     * @param key            The key.
+     * @param transformation The name of the transformation, e.g., <i>DES/CBC/PKCS5Padding</i>.
+     * @param iv             The buffer with the IV. The contents of the
+     *                       buffer are copied to protect against subsequent modification.
+     * @return the Base64-encode bytes of DES encryption
+     */
+    public static byte[] encryptDES2Base64(final byte[] data,
+                                           final byte[] key,
+                                           final String transformation,
+                                           final byte[] iv) {
+        return base64Encode(encryptDES(data, key, transformation, iv));
+    }
 
     /**
      * Return the hex string of DES encryption.
@@ -642,22 +642,22 @@ public final class EncryptUtils {
         return symmetricTemplate(data, key, "DES", transformation, iv, true);
     }
 
-//    /**
-//     * Return the bytes of DES decryption for Base64-encode bytes.
-//     *
-//     * @param data           The data.
-//     * @param key            The key.
-//     * @param transformation The name of the transformation, e.g., <i>DES/CBC/PKCS5Padding</i>.
-//     * @param iv             The buffer with the IV. The contents of the
-//     *                       buffer are copied to protect against subsequent modification.
-//     * @return the bytes of DES decryption for Base64-encode bytes
-//     */
-//    public static byte[] decryptBase64DES(final byte[] data,
-//                                          final byte[] key,
-//                                          final String transformation,
-//                                          final byte[] iv) {
-//        return decryptDES(base64Decode(data), key, transformation, iv);
-//    }
+    /**
+     * Return the bytes of DES decryption for Base64-encode bytes.
+     *
+     * @param data           The data.
+     * @param key            The key.
+     * @param transformation The name of the transformation, e.g., <i>DES/CBC/PKCS5Padding</i>.
+     * @param iv             The buffer with the IV. The contents of the
+     *                       buffer are copied to protect against subsequent modification.
+     * @return the bytes of DES decryption for Base64-encode bytes
+     */
+    public static byte[] decryptBase64DES(final byte[] data,
+                                          final byte[] key,
+                                          final String transformation,
+                                          final byte[] iv) {
+        return decryptDES(base64Decode(data), key, transformation, iv);
+    }
 
     /**
      * Return the bytes of DES decryption for hex string.
@@ -697,22 +697,22 @@ public final class EncryptUtils {
     // 3DES encryption
     ///////////////////////////////////////////////////////////////////////////
 
-//    /**
-//     * Return the Base64-encode bytes of 3DES encryption.
-//     *
-//     * @param data           The data.
-//     * @param key            The key.
-//     * @param transformation The name of the transformation, e.g., <i>DES/CBC/PKCS5Padding</i>.
-//     * @param iv             The buffer with the IV. The contents of the
-//     *                       buffer are copied to protect against subsequent modification.
-//     * @return the Base64-encode bytes of 3DES encryption
-//     */
-//    public static byte[] encrypt3DES2Base64(final byte[] data,
-//                                            final byte[] key,
-//                                            final String transformation,
-//                                            final byte[] iv) {
-//        return base64Encode(encrypt3DES(data, key, transformation, iv));
-//    }
+    /**
+     * Return the Base64-encode bytes of 3DES encryption.
+     *
+     * @param data           The data.
+     * @param key            The key.
+     * @param transformation The name of the transformation, e.g., <i>DES/CBC/PKCS5Padding</i>.
+     * @param iv             The buffer with the IV. The contents of the
+     *                       buffer are copied to protect against subsequent modification.
+     * @return the Base64-encode bytes of 3DES encryption
+     */
+    public static byte[] encrypt3DES2Base64(final byte[] data,
+                                            final byte[] key,
+                                            final String transformation,
+                                            final byte[] iv) {
+        return base64Encode(encrypt3DES(data, key, transformation, iv));
+    }
 
     /**
      * Return the hex string of 3DES encryption.
@@ -748,22 +748,22 @@ public final class EncryptUtils {
         return symmetricTemplate(data, key, "DESede", transformation, iv, true);
     }
 
-//    /**
-//     * Return the bytes of 3DES decryption for Base64-encode bytes.
-//     *
-//     * @param data           The data.
-//     * @param key            The key.
-//     * @param transformation The name of the transformation, e.g., <i>DES/CBC/PKCS5Padding</i>.
-//     * @param iv             The buffer with the IV. The contents of the
-//     *                       buffer are copied to protect against subsequent modification.
-//     * @return the bytes of 3DES decryption for Base64-encode bytes
-//     */
-//    public static byte[] decryptBase64_3DES(final byte[] data,
-//                                            final byte[] key,
-//                                            final String transformation,
-//                                            final byte[] iv) {
-//        return decrypt3DES(base64Decode(data), key, transformation, iv);
-//    }
+    /**
+     * Return the bytes of 3DES decryption for Base64-encode bytes.
+     *
+     * @param data           The data.
+     * @param key            The key.
+     * @param transformation The name of the transformation, e.g., <i>DES/CBC/PKCS5Padding</i>.
+     * @param iv             The buffer with the IV. The contents of the
+     *                       buffer are copied to protect against subsequent modification.
+     * @return the bytes of 3DES decryption for Base64-encode bytes
+     */
+    public static byte[] decryptBase64_3DES(final byte[] data,
+                                            final byte[] key,
+                                            final String transformation,
+                                            final byte[] iv) {
+        return decrypt3DES(base64Decode(data), key, transformation, iv);
+    }
 
     /**
      * Return the bytes of 3DES decryption for hex string.
@@ -803,22 +803,22 @@ public final class EncryptUtils {
     // AES encryption
     ///////////////////////////////////////////////////////////////////////////
 
-//    /**
-//     * Return the Base64-encode bytes of AES encryption.
-//     *
-//     * @param data           The data.
-//     * @param key            The key.
-//     * @param transformation The name of the transformation, e.g., <i>DES/CBC/PKCS5Padding</i>.
-//     * @param iv             The buffer with the IV. The contents of the
-//     *                       buffer are copied to protect against subsequent modification.
-//     * @return the Base64-encode bytes of AES encryption
-//     */
-//    public static byte[] encryptAES2Base64(final byte[] data,
-//                                           final byte[] key,
-//                                           final String transformation,
-//                                           final byte[] iv) {
-//        return base64Encode(encryptAES(data, key, transformation, iv));
-//    }
+    /**
+     * Return the Base64-encode bytes of AES encryption.
+     *
+     * @param data           The data.
+     * @param key            The key.
+     * @param transformation The name of the transformation, e.g., <i>DES/CBC/PKCS5Padding</i>.
+     * @param iv             The buffer with the IV. The contents of the
+     *                       buffer are copied to protect against subsequent modification.
+     * @return the Base64-encode bytes of AES encryption
+     */
+    public static byte[] encryptAES2Base64(final byte[] data,
+                                           final byte[] key,
+                                           final String transformation,
+                                           final byte[] iv) {
+        return base64Encode(encryptAES(data, key, transformation, iv));
+    }
 
     /**
      * Return the hex string of AES encryption.
@@ -854,22 +854,22 @@ public final class EncryptUtils {
         return symmetricTemplate(data, key, "AES", transformation, iv, true);
     }
 
-//    /**
-//     * Return the bytes of AES decryption for Base64-encode bytes.
-//     *
-//     * @param data           The data.
-//     * @param key            The key.
-//     * @param transformation The name of the transformation, e.g., <i>DES/CBC/PKCS5Padding</i>.
-//     * @param iv             The buffer with the IV. The contents of the
-//     *                       buffer are copied to protect against subsequent modification.
-//     * @return the bytes of AES decryption for Base64-encode bytes
-//     */
-//    public static byte[] decryptBase64AES(final byte[] data,
-//                                          final byte[] key,
-//                                          final String transformation,
-//                                          final byte[] iv) {
-//        return decryptAES(base64Decode(data), key, transformation, iv);
-//    }
+    /**
+     * Return the bytes of AES decryption for Base64-encode bytes.
+     *
+     * @param data           The data.
+     * @param key            The key.
+     * @param transformation The name of the transformation, e.g., <i>DES/CBC/PKCS5Padding</i>.
+     * @param iv             The buffer with the IV. The contents of the
+     *                       buffer are copied to protect against subsequent modification.
+     * @return the bytes of AES decryption for Base64-encode bytes
+     */
+    public static byte[] decryptBase64AES(final byte[] data,
+                                          final byte[] key,
+                                          final String transformation,
+                                          final byte[] iv) {
+        return decryptAES(base64Decode(data), key, transformation, iv);
+    }
 
     /**
      * Return the bytes of AES decryption for hex string.
@@ -942,21 +942,21 @@ public final class EncryptUtils {
     // RSA encryption
     ///////////////////////////////////////////////////////////////////////////
 
-//    /**
-//     * Return the Base64-encode bytes of RSA encryption.
-//     *
-//     * @param data           The data.
-//     * @param key            The key.
-//     * @param isPublicKey    True to use public key, false to use private key.
-//     * @param transformation The name of the transformation, e.g., <i>RSA/CBC/PKCS1Padding</i>.
-//     * @return the Base64-encode bytes of RSA encryption
-//     */
-//    public static byte[] encryptRSA2Base64(final byte[] data,
-//                                           final byte[] key,
-//                                           final boolean isPublicKey,
-//                                           final String transformation) {
-//        return base64Encode(encryptRSA(data, key, isPublicKey, transformation));
-//    }
+    /**
+     * Return the Base64-encode bytes of RSA encryption.
+     *
+     * @param data           The data.
+     * @param key            The key.
+     * @param isPublicKey    True to use public key, false to use private key.
+     * @param transformation The name of the transformation, e.g., <i>RSA/CBC/PKCS1Padding</i>.
+     * @return the Base64-encode bytes of RSA encryption
+     */
+    public static byte[] encryptRSA2Base64(final byte[] data,
+                                           final byte[] key,
+                                           final boolean isPublicKey,
+                                           final String transformation) {
+        return base64Encode(encryptRSA(data, key, isPublicKey, transformation));
+    }
 
     /**
      * Return the hex string of RSA encryption.
@@ -990,21 +990,21 @@ public final class EncryptUtils {
         return rsaTemplate(data, key, isPublicKey, transformation, true);
     }
 
-//    /**
-//     * Return the bytes of RSA decryption for Base64-encode bytes.
-//     *
-//     * @param data           The data.
-//     * @param key            The key.
-//     * @param isPublicKey    True to use public key, false to use private key.
-//     * @param transformation The name of the transformation, e.g., <i>RSA/CBC/PKCS1Padding</i>.
-//     * @return the bytes of RSA decryption for Base64-encode bytes
-//     */
-//    public static byte[] decryptBase64RSA(final byte[] data,
-//                                          final byte[] key,
-//                                          final boolean isPublicKey,
-//                                          final String transformation) {
-//        return decryptRSA(base64Decode(data), key, isPublicKey, transformation);
-//    }
+    /**
+     * Return the bytes of RSA decryption for Base64-encode bytes.
+     *
+     * @param data           The data.
+     * @param key            The key.
+     * @param isPublicKey    True to use public key, false to use private key.
+     * @param transformation The name of the transformation, e.g., <i>RSA/CBC/PKCS1Padding</i>.
+     * @return the bytes of RSA decryption for Base64-encode bytes
+     */
+    public static byte[] decryptBase64RSA(final byte[] data,
+                                          final byte[] key,
+                                          final boolean isPublicKey,
+                                          final String transformation) {
+        return decryptRSA(base64Decode(data), key, isPublicKey, transformation);
+    }
 
     /**
      * Return the bytes of RSA decryption for hex string.
@@ -1144,13 +1144,15 @@ public final class EncryptUtils {
         }
     }
 
-//    private static byte[] base64Encode(final byte[] input) {
-//        return Base64.encode(input, Base64.NO_WRAP);
-//    }
+    private static byte[] base64Encode(final byte[] input) {
+        if(input.length==0) return input;
+        return Base64.getEncoder().encode(input);
+    }
 //
-//    private static byte[] base64Decode(final byte[] input) {
-//        return Base64.decode(input, Base64.NO_WRAP);
-//    }
+    private static byte[] base64Decode(final byte[] input) {
+        if(input.length ==0) return input;
+        return Base64.getDecoder().decode(input);
+    }
 
     private static boolean isSpace(final String s) {
         if (s == null) return true;

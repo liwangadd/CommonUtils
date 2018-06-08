@@ -1,5 +1,7 @@
 package cn.windylee.utilcode;
 
+import com.sun.istack.internal.Nullable;
+
 import java.lang.reflect.Array;
 import java.util.Collection;
 import java.util.Map;
@@ -39,7 +41,7 @@ public final class EmptyUtils {
         return obj == null || obj.toString().length() == 0;
     }
 
-    public static boolean isEmpty(final Collection obj) {
+    public static boolean isEmpty(@Nullable final Collection<?> obj) {
         return obj == null || obj.isEmpty();
     }
 

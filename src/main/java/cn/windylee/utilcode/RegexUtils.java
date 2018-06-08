@@ -1,48 +1,14 @@
 package cn.windylee.utilcode;
 
+import cn.windylee.constant.RegexConstant;
+import jdk.nashorn.internal.runtime.regexp.joni.Regex;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegexUtils {
-
-
-    private static final String EMAIL_REGEX = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$";
-
-    private static final String MOBILE_REGEX = "^1(3[0-9]|4[57]|5[0-35-9]|7[01678]|8[0-9])\\d{8}$";
-
-    private static final String ID_CARD15_REGEX = "^[1-9]\\d{7}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}$";
-
-    private static final String ID_CARD18_REGEX = "^[1-9]\\d{5}[1-9]\\d{3}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}([0-9Xx])$";
-
-    private static final String URL_REGEX = "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$";
-
-    private static final String ZH_REGEX = "^[\\u4e00-\\u9fa5]+$";
-
-    private static final String USERNAME_REGEX = "^[\\w\\u4e00-\\u9fa5_-]{6,20}$";
-
-    private static final String PASSWORD_REGEX = "^[a-z0-9_-]{6,18}$";
-
-    private static final String IP_REGEX = "([1-9]|[1-9]\\d|1\\d{2}|2[0-4]\\d|25[0-5])(\\.(\\d|[1-9]\\d|1\\d{2}|2[0-4]\\d|25[0-5])){3}";
-
-    private static final String QQ_REGEX = "^[1-9]\\d{4,}$";
-
-    private static final String POSITIVE_INTEGER_REGEX = "^[1-9]\\d*$";
-
-    private static final String NEGATIVE_INTEGER_REGEX = "^-[1-9]\\d*$";
-
-    private static final String INTEGER_REGEX = "^-?[1-9]\\d*$";
-
-    private static final String POSITIVE_FLOAT_REGEX = "^[1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*$";
-
-    private static final String NEGATIVE_FLOAT_REGEX = "^-[1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*$";
-
-    private static final String FLOAT_REGEX = "^-?[1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*$";
-
-    private RegexUtils() {
-        throw new UnsupportedOperationException("the RegexUtils cannot be initialed");
-    }
 
     /**
      * 验证邮箱
@@ -51,7 +17,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isEmail(final String input) {
-        return isMatch(EMAIL_REGEX, input);
+        return isMatch(RegexConstant.EMAIL_REGEX, input);
     }
 
     /**
@@ -61,7 +27,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isMobilePhone(final String input) {
-        return isMatch(MOBILE_REGEX, input);
+        return isMatch(RegexConstant.MOBILE_REGEX, input);
     }
 
     /**
@@ -71,7 +37,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isIDCard15(final String input) {
-        return isMatch(ID_CARD15_REGEX, input);
+        return isMatch(RegexConstant.ID_CARD15_REGEX, input);
     }
 
     /**
@@ -81,7 +47,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isIDCard18(final String input) {
-        return isMatch(ID_CARD18_REGEX, input);
+        return isMatch(RegexConstant.ID_CARD18_REGEX, input);
     }
 
     /**
@@ -101,7 +67,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isURL(final String input) {
-        return isMatch(URL_REGEX, input);
+        return isMatch(RegexConstant.URL_REGEX, input);
     }
 
     /**
@@ -111,7 +77,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isZH(final String input) {
-        return isMatch(ZH_REGEX, input);
+        return isMatch(RegexConstant.ZH_REGEX, input);
     }
 
     /**
@@ -121,7 +87,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isUsername(final String input) {
-        return isMatch(USERNAME_REGEX, input);
+        return isMatch(RegexConstant.USERNAME_REGEX, input);
     }
 
     /**
@@ -131,7 +97,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isPassword(final String input) {
-        return isMatch(PASSWORD_REGEX, input);
+        return isMatch(RegexConstant.PASSWORD_REGEX, input);
     }
 
     /**
@@ -141,7 +107,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isIP(final String input) {
-        return isMatch(IP_REGEX, input);
+        return isMatch(RegexConstant.IP_REGEX, input);
     }
 
     /**
@@ -151,7 +117,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isQQ(final String input) {
-        return isMatch(QQ_REGEX, input);
+        return isMatch(RegexConstant.QQ_REGEX, input);
     }
 
     /**
@@ -161,7 +127,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isPositiveInteger(final String input) {
-        return isMatch(POSITIVE_INTEGER_REGEX, input);
+        return isMatch(RegexConstant.POSITIVE_INTEGER_REGEX, input);
     }
 
     /**
@@ -171,7 +137,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isNegativeInteger(final String input) {
-        return isMatch(NEGATIVE_INTEGER_REGEX, input);
+        return isMatch(RegexConstant.NEGATIVE_INTEGER_REGEX, input);
     }
 
     /**
@@ -181,7 +147,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isInteger(final String input) {
-        return isMatch(INTEGER_REGEX, input);
+        return isMatch(RegexConstant.INTEGER_REGEX, input);
     }
 
     /**
@@ -191,7 +157,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isPositiveFloat(final String input) {
-        return isMatch(POSITIVE_FLOAT_REGEX, input);
+        return isMatch(RegexConstant.POSITIVE_FLOAT_REGEX, input);
     }
 
     /**
@@ -201,7 +167,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isNegativeFloat(final String input) {
-        return isMatch(NEGATIVE_FLOAT_REGEX, input);
+        return isMatch(RegexConstant.NEGATIVE_FLOAT_REGEX, input);
     }
 
     /**
@@ -211,7 +177,7 @@ public class RegexUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isFloat(final String input) {
-        return isMatch(FLOAT_REGEX, input);
+        return isMatch(RegexConstant.FLOAT_REGEX, input);
     }
 
     /**
